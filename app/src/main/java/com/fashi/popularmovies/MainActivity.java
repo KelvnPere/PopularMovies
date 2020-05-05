@@ -11,8 +11,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.List;
 
@@ -31,12 +34,14 @@ public class MainActivity extends AppCompatActivity {
     public static final String API_KEY = "c003d450fdaed7c42a785e8075f3893c"; // When submitting this project, make sure you remove your API KEY
     public GridLayoutManager gridLayoutManager;
     public RecyclerView recyclerView;
+    ShimmerFrameLayout shimmerFrameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+         shimmerFrameLayout = findViewById(R.id.shimmerFrameLayout);
          textView = findViewById(R.id.title);
 
         // get the reference of RecyclerView
@@ -53,14 +58,17 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<Movie>() {
             @Override
             public void onResponse(Call<Movie> call, Response<Movie> response) {
+                shimmerFrameLayout.stopShimmerAnimation();
+                shimmerFrameLayout.setVisibility(View.GONE);
                 Movie result = (Movie) response.body();
                 List<Movie.ResultsBean> listofmovies = result.getResults();
                 Movie.ResultsBean firstmovies = listofmovies.get(1);
-
                recyclerView.setAdapter(new PopularMovieAdapter(getApplicationContext(),listofmovies));
+
             }
             @Override
             public void onFailure(Call<Movie> call, Throwable t) {
+                shimmerFrameLayout.setVisibility(View.GONE);
                 Toast.makeText(MainActivity.this, "An error occurred, try again" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -91,4 +99,16 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        shimmerFrameLayout.startShimmerAnimation();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        shimmerFrameLayout.stopShimmerAnimation();
+    }
 }
+
