@@ -48,10 +48,10 @@ public class PopularMovieAdapter extends RecyclerView.Adapter<PopularMovieAdapte
     @Override
     public void onBindViewHolder(final MyViewHolder  holder, final int position) {
 
-        final Movie.ResultsBean moviesz = Movies.get(position);
+        final Movie.ResultsBean moviess = Movies.get(position);
 
         Glide.with(mContext)
-                .load(moviesz.getPoster_path())
+                .load(moviess.getPoster_path())
                 //.centerCrop()
                 .fitCenter()
                // .placeholder(R.drawable.ic_launcher_background)
@@ -65,12 +65,12 @@ public class PopularMovieAdapter extends RecyclerView.Adapter<PopularMovieAdapte
             public void onClick(View view) {
                 Intent i = new Intent(mContext, DetailsActivity.class);
                 //pass data though intent using puExtra
-                i.putExtra("title", moviesz.getOriginal_title());
-                i.putExtra("overview",moviesz.getOverview());
-                i.putExtra("date", moviesz.getRelease_date());
-                i.putExtra("rating", moviesz.getVote_count());
-                i.putExtra("imgurl",moviesz.getPoster_path());
-                i.putExtra("id",moviesz.getId());
+                i.putExtra("title", moviess.getOriginal_title());
+                i.putExtra("overview",moviess.getOverview());
+                i.putExtra("date", moviess.getRelease_date());
+                i.putExtra("rating", moviess.getVote_count());
+                i.putExtra("imgurl",moviess.getPoster_path());
+                i.putExtra("id",moviess.getId());
                 mContext.startActivity(i);
             }
         });

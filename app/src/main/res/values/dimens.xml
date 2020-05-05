@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="paddingTop15">15dp</dimen>
+    <dimen name="marginTop16">16dp</dimen>
+    <dimen name="marginTop50">50dp</dimen>
+    <dimen name="marginBottom20">20dp</dimen>
+    <dimen name="marginStart20">20dp</dimen>
+    <dimen name="marginTop52">52dp</dimen>
+    <dimen name="marginStart40">40dp</dimen>
+    <dimen name="marginEnd40">40dp</dimen>
+    <dimen name="padding">4dp</dimen>
+    <dimen name="marginStart8">8dp</dimen>
+    <dimen name="marginTop4">4dp</dimen>
+
+<!--    android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"-->
+
+</resources>
+
+    <!--    paddingTop 15dp marginTop 16dp,
+      margin bottom 20dp margin start 20dp, marginTop 52dp, marginStrat 40 end 40-->

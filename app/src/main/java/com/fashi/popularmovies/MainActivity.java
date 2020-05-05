@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Movie> call, Throwable t) {
                 shimmerFrameLayout.setVisibility(View.GONE);
-                Toast.makeText(MainActivity.this, "An error occurred, try again" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Something went wrong, try again", Toast.LENGTH_SHORT).show();
             }
         });
 
