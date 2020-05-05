@@ -2,6 +2,7 @@ package com.fashi.popularmovies;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.solver.Cache;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -44,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         // set a GridLayoutManager with default vertical orientation and 2 number of columns
         gridLayoutManager  = new GridLayoutManager(getApplicationContext(),2);
         recyclerView.setLayoutManager(gridLayoutManager);
-
     }
 
     // Network call
