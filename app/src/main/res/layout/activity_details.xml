@@ -7,8 +7,6 @@
     android:textAlignment="center"
     tools:context=".DetailsActivity">
 
-
-
     <TextView
         android:id="@+id/movieTitle"
         android:layout_width="281dp"
@@ -53,8 +51,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/marginStart20"
+        android:text="400"
         android:textColor="@color/textViewColor"
-        android:text=""
         app:layout_constraintBottom_toBottomOf="@+id/moviePoster"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.417"
@@ -75,4 +73,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.841" />
+
+    <Button
+        android:id="@+id/favourite_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginEnd="50dp"
+        android:background="@color/colorAccent"
+        android:text="@string/favouriteText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.643"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.339" />
 </androidx.constraintlayout.widget.ConstraintLayout>

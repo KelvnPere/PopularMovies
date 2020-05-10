@@ -12,4 +12,11 @@
         android:id="@+id/highest_rated">
     </item>
 
+
+    <item android:title="@string/favouriteTextMenu"
+        app:showAsAction="never"
+        android:id="@+id/favourite_movies">
+    </item>
+
+
 </menu>

@@ -3,4 +3,7 @@
     <string name="most_popular">Most Popular</string>
     <string name="highest_rated">Highest Rated</string>
     <string name="detailsActivity">Details</string>
+    <string name="favouriteText">Mark as Favourite</string>
+    <string name="favouriteTextMenu">Favourite Movies</string>
+    <string name="favouriteActivityLabel">My Favourites</string>
 </resources>

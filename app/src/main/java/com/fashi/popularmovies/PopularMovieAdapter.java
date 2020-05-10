@@ -10,13 +10,15 @@ import android.widget.ImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.fashi.popularmovies.database.FavouriteEntity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PopularMovieAdapter extends RecyclerView.Adapter<PopularMovieAdapter.MyViewHolder> {
 
-    private List<Movie.ResultsBean> Movies = new ArrayList<>();
+    private List<Movie.ResultsBean> mMovies ;
+
     public Context mContext;
 
 
@@ -33,8 +35,8 @@ public class PopularMovieAdapter extends RecyclerView.Adapter<PopularMovieAdapte
 
     }
     //constructor
-    public PopularMovieAdapter(Context mContext, List<Movie.ResultsBean> movies) {
-        this.Movies = movies;
+    public PopularMovieAdapter(Context mContext, List<Movie.ResultsBean> mMovies) {
+        this.mMovies = mMovies;
         this.mContext = mContext;
     }
 
@@ -48,7 +50,7 @@ public class PopularMovieAdapter extends RecyclerView.Adapter<PopularMovieAdapte
     @Override
     public void onBindViewHolder(final MyViewHolder  holder, final int position) {
 
-        final Movie.ResultsBean moviess = Movies.get(position);
+        final Movie.ResultsBean moviess = mMovies.get(position);
 
         Glide.with(mContext)
                 .load(moviess.getPoster_path())
@@ -78,7 +80,9 @@ public class PopularMovieAdapter extends RecyclerView.Adapter<PopularMovieAdapte
     }
     @Override
     public int getItemCount() {
-        return Movies.size();
+        return mMovies.size();
     }
+
+
 }
 
