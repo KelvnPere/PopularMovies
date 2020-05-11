@@ -30,7 +30,7 @@ public class DetailsActivity extends AppCompatActivity {
     public  static  int PAGE = 1;
     public static String LANGUAGE ="en-US";
     public static String movie_id ="movie_id";
-    public static final String API_KEY = "c003d450fdaed7c42a785e8075f3893c";
+    public static final String API_KEY = "ENTER YOUR API KEY";
 
     public TextView date, title, overview, rating;
     public ImageView img;

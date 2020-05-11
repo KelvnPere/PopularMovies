@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     public static String MOST_POPULAR = "popular";
     public static String HIGHEST_RATED = "top_rated";
     public static String BASE_URL = "https://api.themoviedb.org/";
-    public static final String API_KEY = "c003d450fdaed7c42a785e8075f3893c";
+    public static final String API_KEY = "ENTER YOUR API KEY";
     public GridLayoutManager gridLayoutManager;
     public RecyclerView recyclerView;
     ShimmerFrameLayout shimmerFrameLayout;

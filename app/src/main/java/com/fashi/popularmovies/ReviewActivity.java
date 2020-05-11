@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ReviewActivity extends AppCompatActivity {
     public static String BASE_URL="https://api.themoviedb.org";
     public  static  int PAGE = 1;
-    public static String API_KEY ="c003d450fdaed7c42a785e8075f3893c";
+    public static String API_KEY ="ENTER YOUR API KEY";
     public static String LANGUAGE ="en-US";
     public static String movie_id ="movie_id";
 
