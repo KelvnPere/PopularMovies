@@ -1,9 +1,13 @@
 package com.fashi.popularmovies;
 
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class Movie {
+public class Movie implements Parcelable {
 
     /**
      * page : 1
@@ -199,6 +203,42 @@ public class Movie {
             this.genre_ids = genre_ids;
         }
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.page);
+        dest.writeInt(this.total_results);
+        dest.writeInt(this.total_pages);
+        dest.writeList(this.results);
+    }
+
+    public Movie() {
+    }
+
+    protected Movie(Parcel in) {
+        this.page = in.readInt();
+        this.total_results = in.readInt();
+        this.total_pages = in.readInt();
+        this.results = new ArrayList<ResultsBean>();
+        in.readList(this.results, ResultsBean.class.getClassLoader());
+    }
+
+    public static final Parcelable.Creator<Movie> CREATOR = new Parcelable.Creator<Movie>() {
+        @Override
+        public Movie createFromParcel(Parcel source) {
+            return new Movie(source);
+        }
+
+        @Override
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
 }
 
 

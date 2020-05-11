@@ -11,11 +11,14 @@
     <dimen name="padding">4dp</dimen>
     <dimen name="marginStart8">8dp</dimen>
     <dimen name="marginTop4">4dp</dimen>
+    <dimen name="marginStart200">200dp</dimen>
+    <dimen name="marginEnd50">50dp</dimen>
+    <dimen name="margin_height250">250dp</dimen>
+    <dimen name="layout_width101">101dp</dimen>
+    <dimen name="layout_height160">160dp</dimen>
+    <dimen name="layout_width281">281dp</dimen>
+    <dimen name="layout_height50">50dp</dimen>
 
-<!--    android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"-->
 
 </resources>
 
-    <!--    paddingTop 15dp marginTop 16dp,
-      margin bottom 20dp margin start 20dp, marginTop 52dp, marginStrat 40 end 40-->

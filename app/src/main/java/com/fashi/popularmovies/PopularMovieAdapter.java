@@ -73,6 +73,13 @@ public class PopularMovieAdapter extends RecyclerView.Adapter<PopularMovieAdapte
                 i.putExtra("rating", moviess.getVote_count());
                 i.putExtra("imgurl",moviess.getPoster_path());
                 i.putExtra("id",moviess.getId());
+                /*
+                With Android 9, you cannot start an activity
+                 from a non-activity context unless
+                 you pass the intent flag FLAG_ACTIVITY_NEW_TASK.
+                 That's what the Flag was added.
+                 */
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(i);
             }
         });
