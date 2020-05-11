@@ -69,4 +69,7 @@ dependencies {
     implementation 'com.facebook.stetho:stetho:1.5.1'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+
 }

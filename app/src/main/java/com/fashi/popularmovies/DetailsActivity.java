@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
-import android.opengl.Visibility;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.fashi.popularmovies.database.AppDatabase;
 import com.fashi.popularmovies.database.FavouriteEntity;
 
@@ -36,7 +34,9 @@ public class DetailsActivity extends AppCompatActivity {
 
     public TextView date, title, overview, rating;
     public ImageView img;
-    Button favouriteButton, fab;
+    Button favouriteButton;
+    Button fab;
+    Button review;
     AppDatabase mDb;
 
 
@@ -65,6 +65,8 @@ public class DetailsActivity extends AppCompatActivity {
         img = findViewById(R.id.moviePoster);
         favouriteButton = findViewById(R.id.favourite_button);
           fab = findViewById(R.id.fab);
+          review = findViewById(R.id.review);
+          //review = findViewById(R.id.review);
 
         favouriteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,7 +114,7 @@ public class DetailsActivity extends AppCompatActivity {
             public void onResponse(Call<VideoClass> call, Response<VideoClass> response) {
                 VideoClass result = (VideoClass) response.body();
                 List<VideoClass.ResultsBean> listofmovies = result.getResults();
-                final VideoClass.ResultsBean firstmovies = listofmovies.get(1);
+                final VideoClass.ResultsBean firstmovies = listofmovies.get(0);
                 // PopularMovieAdapter adapter= new PopularMovieAd);
 
                 fab.setOnClickListener(new View.OnClickListener() {
@@ -136,6 +138,15 @@ public class DetailsActivity extends AppCompatActivity {
 
             }
 
+        });
+
+        review.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(DetailsActivity.this,ReviewActivity.class);
+                i.putExtra("id",idintentIn);
+                startActivity(i);
+            }
         });
 
 
